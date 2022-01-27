@@ -21,17 +21,23 @@ class SecondPage extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          const Text('No botão abaixo a um loading de 3s e depois volta para pagina anterior.'),
+          const Text(
+              'No botão abaixo a um loading de 3s e depois volta para pagina anterior.'),
           const SizedBox(
             height: 16,
           ),
-          const Text('É para que possa ver, que Navegação por gesto e botão "back" nativo não fecham o loading.'),
+          const Text(
+              'É para que possa ver, que Navegação por gesto e botão "back" nativo não fecham o loading.'),
           const SizedBox(
             height: 16,
           ),
           ElevatedButton(
             onPressed: () async {
-              await controller.callAsyncLoader(controller.goBack(() => Navigator.pop(context)));
+              await controller.callAsyncLoader(
+                controller.goBack(
+                  () => Navigator.pop(context),
+                ),
+              );
             },
             child: const Text('Voltar com async.'),
           ),

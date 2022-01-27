@@ -5,7 +5,10 @@ import 'package:flutter/material.dart';
 import 'home/home_page.dart';
 
 void main() {
-  AsyncLoader.setDefaultLoading(const MyLoading());
+  AsyncLoaderClass.onInitAsyncLoaderState(
+    defaultDialogWidget:
+        const MyLoading(), //TODO Seta o Widget de loading inicial.
+  );
   runApp(const MyApp());
 }
 
@@ -17,6 +20,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       themeMode: ThemeMode.dark,
+      navigatorObservers: [
+        AsyncLoaderClass.observer
+      ], //TODO Add Observer navigator para pegar o contexto.
       theme: ThemeData.dark(),
       home: HomePage(),
     );
