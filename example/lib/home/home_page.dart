@@ -1,4 +1,3 @@
-import 'package:asyncloader/asyncloader.dart';
 import 'package:example/home/home_controller.dart';
 import 'package:example/home/second_page.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +7,6 @@ class HomePage extends StatelessWidget {
   final HomeController controller = HomeController();
   @override
   Widget build(BuildContext context) {
-    AsyncLoader.setContext(context);
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
